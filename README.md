@@ -17,6 +17,9 @@ The widget result in a list.
 
 ![](http://i.imgur.com/OjJ13Vm.jpg)
 
+# Translate
+Currently, the plugin has support to: **English** AND **Português (Brasil)**
+
 # Developers
 You can get the values in an array, using the function **ifw_get_fields()** that return an array two-dimensional.
 
