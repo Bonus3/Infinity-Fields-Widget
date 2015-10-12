@@ -19,13 +19,10 @@ $ifw_dir = plugins_url('', __FILE__) . '/';
 
 
 /* Load text domain */
-add_action('plugins_loaded', 'ifw_load_textdomain');
- if (!function_exists('ifw_load_textdomain')) {
-    function ifw_load_textdomain() {
-        global $ifw_dir;
-        load_plugin_textdomain('infinity-fields-widget', false, $ifw_dir . 'languages/');
-    }
- }
+add_action('init', 'ifw_load_textdomain');
+function ifw_load_textdomain() {
+    load_plugin_textdomain('infinity-fields-widget', false, dirname(plugin_basename(__FILE__)) . '/languages/');
+}
 
  
  /*
@@ -126,7 +123,7 @@ if (!class_exists('IFW_Widget')) {
                         }
                     ?>
                         <p style="float:left;width:48%;margin:2px 1%;">
-                            <label for="<?php echo $this->get_field_id( $key ); ?>"><?php echo sprintf(__( $label .' <span class="ifw-label">%d</span>:', 'infinity-fields-widget' ), $a + 1); ?></label> 
+                            <label for="<?php echo $this->get_field_id( $key ); ?>"><?php echo sprintf(__( $label , 'infinity-fields-widget' ).' <span class="ifw-label">%d</span>:', $a + 1); ?></label> 
                             <input class="widefat" id="<?php echo $this->get_field_id( $key ); ?>" name="<?php echo $this->get_field_name( $key ); ?>" type="text" value="<?php echo esc_attr( $value ); ?>">
                         </p>
                     <?php
@@ -152,11 +149,11 @@ if (!class_exists('IFW_Widget')) {
             ?>
                 <div>
                     <p style="float:left;width:48%;margin:2px 1%;">
-                        <label for="<?php echo $this->get_field_id( $random_id_label ); ?>"><?php echo sprintf(__( 'Label <span class="ifw-label">%d</span>:', 'infinity-fields-widget' ), $a + 1); ?></label> 
+                        <label for="<?php echo $this->get_field_id( $random_id_label ); ?>"><?php echo sprintf(__( 'Label' , 'infinity-fields-widget' ).' <span class="ifw-label">%d</span>:', $a + 1); ?></label> 
                         <input class="widefat" id="<?php echo $this->get_field_id( $random_id_label ); ?>" name="<?php echo $this->get_field_name( $random_id_label ); ?>" type="text" value="">
                     </p>
                     <p style="float:left;width:48%;margin:2px 1%;">
-                        <label for="<?php echo $this->get_field_id( $random_id_value ); ?>"><?php echo sprintf(__( 'Value <span class="ifw-label">%d</span>:', 'infinity-fields-widget' ), $a + 1); ?></label> 
+                        <label for="<?php echo $this->get_field_id( $random_id_value ); ?>"><?php echo sprintf(__( 'Value' , 'infinity-fields-widget' ).' <span class="ifw-label">%d</span>:', $a + 1); ?></label> 
                         <input class="widefat" id="<?php echo $this->get_field_id( $random_id_value ); ?>" name="<?php echo $this->get_field_name( $random_id_value ); ?>" type="text" value="">
                     </p>
                 </div>
@@ -164,7 +161,7 @@ if (!class_exists('IFW_Widget')) {
             }
             // The link below is to add dynamic field
             ?>
-            <a href="#" class="ifw-add" onclick="return ifw_add_field(this)"><?php _e('Add', 'infinity-fields-widget'); ?></a>
+            <a href="#" class="ifw-add button button-primary" onclick="return ifw_add_field(this)"><?php _e('Add', 'infinity-fields-widget'); ?></a>
             </div>
         <?php } // End function form
         
