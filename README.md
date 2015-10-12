@@ -20,9 +20,9 @@ The widget result in a list.
 # Developers
 You can get the values in an array, using the function **ifw_get_fields()** that return an array two-dimensional.
 
-<?php
-	$ifws = ifw_get_fields();
-?>
+  <?php
+      $ifws = ifw_get_fields();
+  ?>
 -----------------------------------------------
 array(
       array(
@@ -40,11 +40,11 @@ array(
  )
 -----------------------------------------------
 
-So you can used in the loop
+**So you can used in the loop**
 -----------------------------------------------
-<?php
-  foreach ($ifws as $ifw) {
-      echo "<p>" . $ifw['label'] . " -> " . $ifw['value'] . "</p>";
-  }
-?>
+  <?php
+    foreach ($ifws as $ifw) {
+        echo "<p>" . $ifw['label'] . " -> " . $ifw['value'] . "</p>";
+    }
+  ?>
 -----------------------------------------------
