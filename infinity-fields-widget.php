@@ -122,7 +122,7 @@ if (!class_exists('IFW_Widget')) {
                             $label = 'Label'; //Set label of the next field to 'Label'
                             echo "<div>"; //open container that will contain the paragraphs 
                         } else { // if $i is odd, the next value is the value field
-                            $label = 'Valor'; //Set label of the next field to 'Label'
+                            $label = 'Value'; //Set label of the next field to 'Label'
                         }
                     ?>
                         <p style="float:left;width:48%;margin:2px 1%;">
