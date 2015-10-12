@@ -118,7 +118,7 @@ if (!class_exists('IFW_Widget')) {
         register_widget('IFW_Widget');
     });
     
-    function ifw_get_fiels() {
+    function ifw_get_fields() {
         global $wp_widget_factory;
         $ifw = $wp_widget_factory->widgets['IFW_Widget'];
         $option = get_option('widget_ifw');
