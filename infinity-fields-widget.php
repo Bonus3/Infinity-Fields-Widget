@@ -184,7 +184,7 @@ if (!class_exists('IFW_Widget')) {
         
         
         /*
-         * HTML to front-end
+         * HTML rendered to front-end
          */
         public function widget($args, $instance) {
             echo $args['before_widget'];
