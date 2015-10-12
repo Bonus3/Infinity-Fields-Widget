@@ -27,4 +27,4 @@ You can get the values in an array, using the function **ifw_get_fields()** that
 **So you can use in the loop**
 -----------------------------------------------
 <p>foreach ($ifws as $ifw)</p>
-echo '\\<p\\>' . $ifw['label'] . ' -> ' . $ifw['value'] . '\\</p\\>';
+echo '&lt;p&lt;' . $ifw['label'] . ' -> ' . $ifw['value'] . '&lt;/p&lt;';
