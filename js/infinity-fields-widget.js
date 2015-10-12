@@ -5,6 +5,9 @@ function ifw_add_field(el) {
 
     var widget_base = ifw.find('.id_base').val();
     var widget_number = ifw.find('.multi_number').val();
+    if (widget_number.length === 0) {
+        widget_number = ifw.find('.widget_number').val();
+    }
     var rand_ = 'xxxxxxxyxxxx4xxxyxxxxxxxxxxxxxifw'.replace(/[xy]/g, function(c) {
             var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
             return v.toString(16);
